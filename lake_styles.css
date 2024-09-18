@@ -1,0 +1,183 @@
+﻿/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: Junheng Cui
+   Date: 2024.9.18
+   
+   Filename: lake_styles.css
+
+*/
+
+
+@charset "utf-8";
+
+/* 引入 CAC Champagne 字体 */
+@font-face {
+   font-family: 'CAC Champagne';
+   src: url('cac_champagne.woff') format('woff'),
+        url('cac_champagne.ttf') format('truetype'); /* 引入自定义字体，支持woff和ttf格式 */
+}
+
+/* 引入 Dobkin Plain 字体 */
+@font-face {
+   font-family: 'Dobkin Plain';
+   src: url('DobkinPlain.woff') format('woff'),
+        url('DobkinPlain.ttf') format('truetype'); /* 引入自定义字体，支持woff和ttf格式 */
+}
+
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif; /* 设置全局字体 */
+    background-color: #bceb7b; /* 设置背景颜色 */
+    margin: 0 auto;
+    width: 100%; /* 页面宽度 */
+    max-width: 1020px; /* 最大宽度 */
+    min-width: 640px; /* 最小宽度 */
+    display: grid; /* 使用Grid布局 */
+    grid-template-rows: auto 1fr auto; /* 网格布局，分为头部、内容、页脚 */
+    grid-template-columns: 1fr; /* 单列布局 */
+    min-height: 100vh; /* 页面最小高度 */
+}
+
+/* 头部样式 */
+header {
+    background-color: #ba2bef; /* 头部背景颜色 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 居中对齐 */
+    grid-row: 1; /* 放置在网格的第一行 */
+}
+
+header img {
+    width: 100%; /* 图片宽度 */
+    height: auto; /* 保持图片比例 */
+}
+
+/* 头部导航样式 */
+header nav ul {
+   display: grid; /* 使用 Grid 布局 */
+   grid-template-columns: repeat(6, 1fr); /* 创建6列，均匀分布 */
+   list-style-type: none; /* 移除列表样式 */
+   padding: 0; /* 移除内边距 */
+   margin: 0; /* 移除外边距 */
+   background-color: #7b5f85; /* 导航栏背景颜色 */
+   height: 50px; /* 导航栏高度 */
+   align-items: center; /* 垂直居中 */
+}
+
+header nav ul li {
+   display: flex; /* 使用 Flexbox 帮助内容居中 */
+   justify-content: center; /* 水平居中 */
+   align-items: center; /* 垂直居中 */
+}
+
+header nav a {
+   color: white; /* 导航链接颜色 */
+   text-decoration: none; /* 移除链接下划线 */
+   font-size: 1.2em; /* 设置字体大小 */
+}
+
+/* 主内容区域布局 */
+#container {
+    display: grid; /* 使用Grid布局 */
+    grid-template-columns: 70% 30%; /* 左侧和右侧列宽度比例 */
+    grid-row: 2; /* 网格的第二行 */
+}
+
+/* 左侧内容区样式 */
+section#leftcol {
+    background-color: rgb(19, 18, 18); /* 左侧背景颜色 */
+    color: aliceblue; /* 字体颜色 */
+    padding: 0; /* 移除内边距 */
+}
+
+/* section#leftcol 中的 h1 标题样式 */
+section#leftcol h1 {
+   font-size: 2.5em; /* 设置字体大小 */
+   font-family: 'CAC Champagne', cursive; /* 使用 CAC Champagne 字体 */
+}
+
+/* section#leftcol 中的图片 */
+section#leftcol img {
+   padding: 0; /* 移除图片的内边距 */
+   display: block; /* 防止图片底部出现意外的空隙 */
+   max-width: 100%; /* 确保图片不超出父容器宽度 */
+}
+
+/* section#leftcol 中的段落 */
+section#leftcol p {
+   padding: 20px; /* 段落内边距 */
+   margin: 0; /* 移除段落的默认外边距 */
+}
+
+/* section#leftcol 中的 aside 里的 h1 标题样式 */
+section#leftcol aside h1 {
+    font-size: 1.2em; /* 设置较小的字体大小 */
+    margin: 0; /* 移除默认外边距 */
+    padding-bottom: 10px; /* 标题与内容的间距 */
+}
+
+section#leftcol aside h2 {
+   font-size: 1.2em; /* 设置较小的字体大小 */
+   margin: 0; /* 移除默认外边距 */
+   padding-bottom: 10px; /* 标题与内容的间距 */
+}
+
+/* section#leftcol 中的第一个 aside */
+section#leftcol aside:nth-of-type(1) {
+   background-color: #807a56; /* 第一个 aside 的背景颜色 */
+   padding: 20px; /* 设置内边距 */
+   margin-bottom: 20px; /* 与下一个 aside 的间距 */
+}
+
+/* section#leftcol 中的第二个 aside */
+section#leftcol aside:nth-of-type(2) {
+   background-color: #8FBC8F; /* 第二个 aside 的背景颜色 */
+   padding: 20px; /* 设置内边距 */
+}
+
+/* 右侧内容区样式 */
+section#rightcol {
+    background-color: #5a3451; /* 右侧背景颜色 */
+    display: grid; /* 使用 Grid 布局 */
+    grid-template-rows: 1fr 1fr auto; /* 分为三行 */
+    padding: 20px; /* 设置内边距 */
+    color:antiquewhite; /* 字体颜色 */
+}
+
+section#rightcol h2 {
+   font-family: 'CAC Champagne'; /* 使用 CAC Champagne 字体 */
+}
+
+section#rightcol nav {
+   padding: 10px; /* 导航内部填充 */
+}
+
+/* 修改 section#rightcol 中链接的字体颜色 */
+section#rightcol a {
+   color: #dfecf5; /* 链接字体颜色 */
+   text-decoration: none; /* 移除链接下划线 */
+}
+
+/* 修改链接在悬停时的颜色 */
+section#rightcol a:hover {
+   color: #65abf0; /* 悬停时的颜色 */
+   text-decoration: underline; /* 悬停时添加下划线 */
+}
+
+/* 为 blockquote 添加样式 */
+section#rightcol blockquote {
+   padding: 10px; /* 内部填充 */
+   font-style: italic; /* 斜体样式 */
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #5B4762; /* 页脚背景颜色 */
+    color: white; /* 字体颜色 */
+    text-align: center; /* 居中对齐 */
+    padding: 10px; /* 内边距 */
+    grid-row: 3; /* 网格的第三行 */
+}
